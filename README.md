@@ -1,2 +1,2 @@
 ﻿# verifica_finale
-* **Link al Dataset:** [Kaggle - Used Cars Dataset](https://www.kaggle.com/datasets/austinreese/craigslist-car-truck-data)
+* **Link al Dataset:** https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data/data
