@@ -39,7 +39,7 @@
 
 * **Visualizzazione grafica:** È stata realizzata una semplice visualizzazione tramite grafici a barre (*bar plot*) per analizzare i brand presenti nel dataset. Nello specifico, sono stati messi a confronto il numero di modelli unici per ciascuna marca e il numero complessivo di modelli (compresi i duplicati) registrati per ciascun brand.
 
-* * **Addestramento dei modelli:** Sono stati scelti 4 modelli da addestrare in modo tale da valutare per ciascuno di essi le performance in termini di **MSE**, **RMSE** e **$R^2$**. In particolare, sono stati impiegati:
+* **Addestramento dei modelli:** Sono stati scelti 4 modelli da addestrare in modo tale da valutare per ciascuno di essi le performance in termini di **MSE**, **RMSE** e **$R^2$**. In particolare, sono stati impiegati:
   * **XGBoost**
   * **LightGBM**
   * **CatBoost**
