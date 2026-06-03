@@ -44,4 +44,6 @@
   * **LightGBM**
   * **CatBoost**
   * **Random Forest**
-  
+* **Addestramento dei modelli:** In particolare è necessario gestire le colonne categoriche Stringhe attraverso tecniche quali il one hot encoding, label encoding o altri metodi che permettano di gestire valori non numerici.
+
+
