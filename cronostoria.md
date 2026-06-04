@@ -53,7 +53,7 @@
 
   *  Dopo la rimozione degli outlier, completata la pulizia dei valori nulli e la trasformazione dei dati stringa, siamo passati all'addestramento dei modelli
 
-#### 📊 Addestramento dei modelli
+#### 💾 Addestramento dei modelli
 * **Assegnazione:** *Diego*
 * **Descrizione:** Modello CatBoost
 
@@ -69,7 +69,7 @@
   Per migliorare ulteriormente il processo di ottimizzazione, ho introdotto Optuna, che mi ha permesso di esplorare in modo sistematico e automatizzato uno spazio di ricerca più ampio. Grazie a questa procedura, è stato     possibile individuare una combinazione di iperparametri più efficace, con un impatto positivo sulle metriche di valutazione e sulla capacità predittiva complessiva del modello LightGBM.
   
 * **Assegnazione:** *Luigi*
-* * **Descrizione:** Modello XGBoost
+* **Descrizione:** Modello XGBoost
   Inizialmente sono stati gestiti i valori categorici in particolare attraverso due tecniche: Il one hot encoding per le feature che presentavano una bassa cardinalità, mentre nel caso di model e manufacturer presentando    una elevata quantità di valori unici si è preferito fare un encoding in cui i valori di model e manufacturer sono stati sostituiti con il prezzo medio per modello e per marca. Dopo aver valutato attraverso le metriche     adatte alla regressione si è pensato di fare un tuning dei parametri attraverso Optuna
 
 * **Assegnazione:** *Antonio*
@@ -78,6 +78,20 @@
   Ho generato diversi grafici per individuare i veicoli che presentavano le maggiori discrepanze tra il prezzo reale e quello predetto. Dall’osservazione di tali visualizzazioni è emerso che gli errori più elevati erano     associati a marche con una presenza molto limitata nel dataset. La scarsità di dati relativi a questi brand impediva al modello di apprendere in modo adeguato le loro caratteristiche, generando così previsioni poco        accurate.
 
   Per approfondire il comportamento del modello, ho stato effettuato un ulteriore test aumentando il numero di alberi, con l’obiettivo di migliorare la stabilità delle predizioni. L’incremento del numero di estimatori ha    effettivamente contribuito a rendere il modello più robusto, anche se il problema legato alla scarsità di dati per alcune marche è rimasto un limite strutturale.
+
+  * **Confronto dei modelli:**
+  Dal confronto tra i modelli è emerso che il modello LightGBM ha ottenuto le prestazioni migliori, registrando l’errore più basso tra tutti i modelli testati. La sua struttura basata su gradient boosting e la capacità      di gestire in modo efficiente dataset di grandi dimensioni hanno contribuito a renderlo il modello più accurato e stabile per il nostro problema di previsione del prezzo dei veicoli usati.
+ 
+    
+  #### 📊 Visualizzazione
+  * **Visualizzazione grafica:**
+  Per la fase di visualizzazione dei risultati è stato scelto il modello LightGBM, in quanto, tra tutti i modelli testati, è quello che ha ottenuto l’errore più basso.
+
+  Per la realizzazione dell’interfaccia di visualizzazione è stata utilizzata la libreria streamlit che offre widget come slider, selectbox, input numerici e testuali. un altra caratteristica è l'aggiornamento in tempo      reale, l’interfaccia si aggiorna automaticamente a ogni modifica dei parametri. Tramite questa libreria siamo riusciti a sviluppare un’applicazione interattiva, in grado di offrire un’esperienza dinamica all’utente.
+
+  L’interfaccia consente all’utente di inserire le caratteristiche principali del proprio veicolo come: marca, modello, anno, chilometraggio e altre specifiche e di ottenere in tempo reale una stima del prezzo generata      dal modello LightGBM ottimizzato. 
+
+  
 
   
       
