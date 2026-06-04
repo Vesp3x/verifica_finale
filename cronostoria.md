@@ -89,7 +89,12 @@
 
   Per la realizzazione dell’interfaccia di visualizzazione è stata utilizzata la libreria streamlit che offre widget come slider, selectbox, input numerici e testuali. Un altra caratteristica è l'aggiornamento in tempo      reale, l’interfaccia si aggiorna automaticamente a ogni modifica dei parametri. Tramite questa libreria siamo riusciti a sviluppare un’applicazione interattiva, in grado di offrire un’esperienza dinamica all’utente.
 
-  L’interfaccia consente all’utente di inserire le caratteristiche principali del proprio veicolo come: marca, modello, anno, chilometraggio e altre specifiche e di ottenere in tempo reale una stima del prezzo generata      dal modello LightGBM ottimizzato. 
+  L’interfaccia consente all’utente di inserire le caratteristiche principali del proprio veicolo come: marca, modello, anno, chilometraggio e altre specifiche e di ottenere in tempo reale una stima del prezzo generata      dal modello LightGBM ottimizzato.
+
+
+  #### 📄 Presentazione del progetto
+  * **power point**
+Abbiamo realizzato una presentazione in PowerPoint con l’obiettivo di illustrare in modo chiaro e strutturato tutte le fasi dello sviluppo del nostro modello. La presentazione ripercorre l’intero percorso svolto: dalla selezione e pulizia del dataset, all’addestramento dei modelli, fino alla scelta finale di LightGBM e alla realizzazione dell’interfaccia interattiva. Questo supporto visivo ci permette di comunicare in modo efficace i risultati ottenuti e le motivazioni delle scelte tecniche effettuate.
 
   
 
