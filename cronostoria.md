@@ -60,4 +60,10 @@
   In una prima fase ho eseguito una serie di test con una configurazione di iperparametri leggera, con l’obiettivo di ottenere rapidamente una valutazione preliminare delle prestazioni del modello, pur consapevole che il    risultato sarebbe stato meno accurato. Dopo aver osservato un miglioramento significativo rispetto al modello precedente, in particolare grazie alla rimozione degli outlier, che ha stabilizzato la distribuzione dei        prezzi sono passato all'ottimizzazione.
 
   In questa seconda fase ho utilizzato Optuna per effettuare una ricerca più ampia e sistematica degli iperparametri ottimali. L’obiettivo era ridurre ulteriormente l’errore del modello, esplorando uno spazio di ricerca     più esteso, così da ottenere una configurazione più performante e robusta.
-     
+
+* **Assegnazione:** *Roberto*
+* **Descrizione:** Modello LightGBM, un modello basato su gradient boosting particolarmente efficiente nella gestione di dataset di grandi dimensioni e caratterizzato da un’elevata velocità di addestramento.
+
+Ho inizialmente addestrato il modello utilizzando una configurazione di iperparametri volutamente semplice, con l’obiettivo di ottenere una valutazione preliminare delle prestazioni in tempi rapidi. In una fase successiva ho progressivamente incrementato la complessità degli iperparametri, osservando una riduzione significativa dell’errore man mano che il modello veniva reso più espressivo.
+
+Per migliorare ulteriormente il processo di ottimizzazione, ho introdotto Optuna, che mi ha permesso di esplorare in modo sistematico e automatizzato uno spazio di ricerca più ampio. Grazie a questa procedura, è stato possibile individuare una combinazione di iperparametri più efficace, con un impatto positivo sulle metriche di valutazione e sulla capacità predittiva complessiva del modello LightGBM.
