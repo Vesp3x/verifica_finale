@@ -57,7 +57,7 @@
 * **Assegnazione:** *Diego*
 * **Descrizione:** Modello CatBoost, un modello progettato per gestire in modo nativo le variabili categoriali, evitando la necessità di una pre‑elaborazione pesante come il one‑hot encoding.
 
-* In una prima fase ho eseguito una serie di test con una configurazione di iperparametri leggera, con l’obiettivo di ottenere rapidamente una valutazione preliminare delle prestazioni del modello, pur consapevole che il    risultato sarebbe stato meno accurato. Dopo aver osservato un miglioramento significativo rispetto al modello precedente, in particolare grazie alla rimozione degli outlier, che ha stabilizzato la distribuzione dei        prezzi sono passato all'ottimizzazione.
+  In una prima fase ho eseguito una serie di test con una configurazione di iperparametri leggera, con l’obiettivo di ottenere rapidamente una valutazione preliminare delle prestazioni del modello, pur consapevole che il    risultato sarebbe stato meno accurato. Dopo aver osservato un miglioramento significativo rispetto al modello precedente, in particolare grazie alla rimozione degli outlier, che ha stabilizzato la distribuzione dei        prezzi sono passato all'ottimizzazione.
 
-* In questa seconda fase ho utilizzato Optuna per effettuare una ricerca più ampia e sistematica degli iperparametri ottimali. L’obiettivo era ridurre ulteriormente l’errore del modello, esplorando uno spazio di ricerca     più esteso, così da ottenere una configurazione più performante e robusta.
+  In questa seconda fase ho utilizzato Optuna per effettuare una ricerca più ampia e sistematica degli iperparametri ottimali. L’obiettivo era ridurre ulteriormente l’errore del modello, esplorando uno spazio di ricerca     più esteso, così da ottenere una configurazione più performante e robusta.
      
