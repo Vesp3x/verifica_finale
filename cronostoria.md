@@ -50,5 +50,14 @@
 
   *  **Rimozione degli outlier:** Attraverso la visualizzazione con dei boxplot viene visualizzata la distribuzione dei valori di prezzo, e successivamente si è     scelto di mantenere solo le auto i cui prezzi rientrano nel range 500-100000 $.
   *  **Bar plot dei prezzi :** In questi grafici si può apprezzare il prezzo medio per ciascun brand produttore
-  *  
+
+  *  Dopo la rimozione degli outlier, completata la pulizia dei valori nulli e la trasformazione dei dati stringa, siamo passati all'addestramento dei modelli
+
+#### 📊 Addestramento dei modelli
+* **Assegnazione:** *Diego*
+* **Descrizione:** Modello CatBoost, un modello progettato per gestire in modo nativo le variabili categoriali, evitando la necessità di una pre‑elaborazione pesante come il one‑hot encoding.
+
+In una prima fase ho eseguito una serie di test con una configurazione di iperparametri leggera, con l’obiettivo di ottenere rapidamente una valutazione preliminare delle prestazioni del modello, pur consapevole che il risultato sarebbe stato meno accurato. Dopo aver osservato un miglioramento significativo rispetto al modello precedente, in particolare grazie alla rimozione degli outlier, che ha stabilizzato la distribuzione dei prezzi sono passato all'ottimizzazione.
+
+In questa seconda fase ho utilizzato Optuna per effettuare una ricerca più ampia e sistematica degli iperparametri ottimali. L’obiettivo era ridurre ulteriormente l’errore del modello, esplorando uno spazio di ricerca più esteso, così da ottenere una configurazione più performante e robusta.
      
