@@ -67,16 +67,17 @@
   Ho inizialmente addestrato il modello utilizzando una configurazione di iperparametri volutamente semplice, con l’obiettivo di ottenere una valutazione preliminare delle prestazioni in tempi rapidi. In una fase            successiva ho progressivamente incrementato la complessità degli iperparametri, osservando una riduzione significativa dell’errore man mano che il modello veniva reso più espressivo.   
 
   Per migliorare ulteriormente il processo di ottimizzazione, ho introdotto Optuna, che mi ha permesso di esplorare in modo sistematico e automatizzato uno spazio di ricerca più ampio. Grazie a questa procedura, è stato     possibile individuare una combinazione di iperparametri più efficace, con un impatto positivo sulle metriche di valutazione e sulla capacità predittiva complessiva del modello LightGBM.
-  * **Assegnazione:** *Luigi*
-  * * **Descrizione:** Modello XGBoost
-  Inizialmente sono stati gestiti i valori categorici in particolare attraverso due tecniche: Il one hot encoding per le feature che presentavano una bassa cardinalità, mentre nel caso di model e manufacturer presentando una elevata quantità di valori unici si è preferito fare un encoding in cui i valori di model e manufacturer sono stati sostituiti con il prezzo medio per modello e per marca. Dopo aver valutato attraverso le metriche adatte alla regressione si è pensato di fare un tuning dei parametri attraverso Optuna
+  
+* **Assegnazione:** *Luigi*
+* * **Descrizione:** Modello XGBoost
+  Inizialmente sono stati gestiti i valori categorici in particolare attraverso due tecniche: Il one hot encoding per le feature che presentavano una bassa cardinalità, mentre nel caso di model e manufacturer presentando    una elevata quantità di valori unici si è preferito fare un encoding in cui i valori di model e manufacturer sono stati sostituiti con il prezzo medio per modello e per marca. Dopo aver valutato attraverso le metriche     adatte alla regressione si è pensato di fare un tuning dei parametri attraverso Optuna
 
 * **Assegnazione:** *Antonio*
 * **Descrizione:** Modello RandomForest
 
   Ho generato diversi grafici per individuare i veicoli che presentavano le maggiori discrepanze tra il prezzo reale e quello predetto. Dall’osservazione di tali visualizzazioni è emerso che gli errori più elevati erano     associati a marche con una presenza molto limitata nel dataset. La scarsità di dati relativi a questi brand impediva al modello di apprendere in modo adeguato le loro caratteristiche, generando così previsioni poco        accurate.
 
- Per approfondire il comportamento del modello, ho stato effettuato un ulteriore test aumentando il numero di alberi, con l’obiettivo di migliorare la stabilità delle predizioni. L’incremento del numero di estimatori ha    effettivamente contribuito a rendere il modello più robusto, anche se il problema legato alla scarsità di dati per alcune marche è rimasto un limite strutturale.
+  Per approfondire il comportamento del modello, ho stato effettuato un ulteriore test aumentando il numero di alberi, con l’obiettivo di migliorare la stabilità delle predizioni. L’incremento del numero di estimatori ha    effettivamente contribuito a rendere il modello più robusto, anche se il problema legato alla scarsità di dati per alcune marche è rimasto un limite strutturale.
 
   
       
