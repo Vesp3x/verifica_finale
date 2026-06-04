@@ -87,7 +87,7 @@
   * **Visualizzazione grafica:**
   Per la fase di visualizzazione dei risultati è stato scelto il modello LightGBM, in quanto, tra tutti i modelli testati, è quello che ha ottenuto l’errore più basso.
 
-  Per la realizzazione dell’interfaccia di visualizzazione è stata utilizzata la libreria streamlit che offre widget come slider, selectbox, input numerici e testuali. un altra caratteristica è l'aggiornamento in tempo      reale, l’interfaccia si aggiorna automaticamente a ogni modifica dei parametri. Tramite questa libreria siamo riusciti a sviluppare un’applicazione interattiva, in grado di offrire un’esperienza dinamica all’utente.
+  Per la realizzazione dell’interfaccia di visualizzazione è stata utilizzata la libreria streamlit che offre widget come slider, selectbox, input numerici e testuali. Un altra caratteristica è l'aggiornamento in tempo      reale, l’interfaccia si aggiorna automaticamente a ogni modifica dei parametri. Tramite questa libreria siamo riusciti a sviluppare un’applicazione interattiva, in grado di offrire un’esperienza dinamica all’utente.
 
   L’interfaccia consente all’utente di inserire le caratteristiche principali del proprio veicolo come: marca, modello, anno, chilometraggio e altre specifiche e di ottenere in tempo reale una stima del prezzo generata      dal modello LightGBM ottimizzato. 
 
