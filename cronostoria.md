@@ -46,7 +46,8 @@
   * **Random Forest**
 * **Addestramento dei modelli:** In particolare è necessario gestire le colonne categoriche Stringhe attraverso tecniche quali il one hot encoding, label encoding o altri metodi che permettano di gestire valori non numerici.
 
-* * **Data:** 03 Giugno 2026
+## GRUPPO 2 | Giorno 2 (04/06/2026)
+
   * * **Rimozione degli outlier:** Attraverso la visualizzazione con dei boxplot viene visualizzata la distribuzione dei valori di prezzo, e successivamente si è     scelto di mantenere solo le auto i cui prezzi rientrano nel range 500-100000 $.
   * * **Bar plot dei prezzi :** In questi grafici si può apprezzare il prezzo medio per ciascun brand produttore
     * 
