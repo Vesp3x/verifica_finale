@@ -67,3 +67,10 @@
   Ho inizialmente addestrato il modello utilizzando una configurazione di iperparametri volutamente semplice, con l’obiettivo di ottenere una valutazione preliminare delle prestazioni in tempi rapidi. In una fase            successiva ho progressivamente incrementato la complessità degli iperparametri, osservando una riduzione significativa dell’errore man mano che il modello veniva reso più espressivo.   
 
   Per migliorare ulteriormente il processo di ottimizzazione, ho introdotto Optuna, che mi ha permesso di esplorare in modo sistematico e automatizzato uno spazio di ricerca più ampio. Grazie a questa procedura, è stato     possibile individuare una combinazione di iperparametri più efficace, con un impatto positivo sulle metriche di valutazione e sulla capacità predittiva complessiva del modello LightGBM.
+  * **Assegnazione:** *Luigi*
+  * * **Descrizione:** Modello XGBoost
+  Inizialmente sono stati gestiti i valori categorici in particolare attraverso due tecniche: Il one hot encoding per le feature che presentavano una bassa cardinalità, mentre nel caso di model e manufacturer presentando una elevata quantità di valori unici si è preferito fare un encoding in cui i valori di model e manufacturer sono stati sostituiti con il prezzo medio per modello e per marca. Dopo aver valutato attraverso le metriche adatte alla regressione si è pensato di fare un tuning dei parametri attraverso Optuna
+      
+    
+
+  
