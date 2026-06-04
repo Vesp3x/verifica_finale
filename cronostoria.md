@@ -55,14 +55,14 @@
 
 #### 📊 Addestramento dei modelli
 * **Assegnazione:** *Diego*
-* **Descrizione:** Modello CatBoost, un modello progettato per gestire in modo nativo le variabili categoriali, evitando la necessità di una pre‑elaborazione pesante come il one‑hot encoding.
+* **Descrizione:** Modello CatBoost
 
   In una prima fase ho eseguito una serie di test con una configurazione di iperparametri leggera, con l’obiettivo di ottenere rapidamente una valutazione preliminare delle prestazioni del modello, pur consapevole che il    risultato sarebbe stato meno accurato. Dopo aver osservato un miglioramento significativo rispetto al modello precedente, in particolare grazie alla rimozione degli outlier, che ha stabilizzato la distribuzione dei        prezzi sono passato all'ottimizzazione.
 
   In questa seconda fase ho utilizzato Optuna per effettuare una ricerca più ampia e sistematica degli iperparametri ottimali. L’obiettivo era ridurre ulteriormente l’errore del modello, esplorando uno spazio di ricerca     più esteso, così da ottenere una configurazione più performante e robusta.
 
 * **Assegnazione:** *Roberto*
-* **Descrizione:** Modello LightGBM, un modello basato su gradient boosting particolarmente efficiente nella gestione di dataset di grandi dimensioni e caratterizzato da un’elevata velocità di addestramento.
+* **Descrizione:** Modello LightGBM
 
   Ho inizialmente addestrato il modello utilizzando una configurazione di iperparametri volutamente semplice, con l’obiettivo di ottenere una valutazione preliminare delle prestazioni in tempi rapidi. In una fase            successiva ho progressivamente incrementato la complessità degli iperparametri, osservando una riduzione significativa dell’errore man mano che il modello veniva reso più espressivo.   
 
@@ -70,6 +70,15 @@
   * **Assegnazione:** *Luigi*
   * * **Descrizione:** Modello XGBoost
   Inizialmente sono stati gestiti i valori categorici in particolare attraverso due tecniche: Il one hot encoding per le feature che presentavano una bassa cardinalità, mentre nel caso di model e manufacturer presentando una elevata quantità di valori unici si è preferito fare un encoding in cui i valori di model e manufacturer sono stati sostituiti con il prezzo medio per modello e per marca. Dopo aver valutato attraverso le metriche adatte alla regressione si è pensato di fare un tuning dei parametri attraverso Optuna
+
+* **Assegnazione:** *Antonio*
+* **Descrizione:** Modello RandomForest
+
+  Ho generato diversi grafici per individuare i veicoli che presentavano le maggiori discrepanze tra il prezzo reale e quello predetto. Dall’osservazione di tali visualizzazioni è emerso che gli errori più elevati erano     associati a marche con una presenza molto limitata nel dataset. La scarsità di dati relativi a questi brand impediva al modello di apprendere in modo adeguato le loro caratteristiche, generando così previsioni poco        accurate.
+
+ Per approfondire il comportamento del modello, ho stato effettuato un ulteriore test aumentando il numero di alberi, con l’obiettivo di migliorare la stabilità delle predizioni. L’incremento del numero di estimatori ha    effettivamente contribuito a rendere il modello più robusto, anche se il problema legato alla scarsità di dati per alcune marche è rimasto un limite strutturale.
+
+  
       
     
 
