@@ -58,7 +58,13 @@ Il dataset finale utilizzato per l'addestramento è composto dalle seguenti feat
 Il file `app.py` contiene il programma principale e l'architettura logica per l'esecuzione del modello predittivo. L'interfaccia grafica è stata sviluppata sfruttando il framework **Streamlit**.
 
 ### 1. Prerequisiti e Avvio
-Per avviare l'applicazione in locale, assicurarsi di aver installato le dipendenze necessarie e lanciare il seguente comando all'interno del terminale, posizionandosi nella cartella del progetto:
+Prima di avviare l'applicazione, è fondamentale assicurarsi di aver scaricato i file del modello addestrato e dell'encoder, necessari al programma per elaborare i dati e generare le previsioni:
+* **`final_lightgbm_model.pkl`** (il modello predittivo)
+* **`final_ordinal_encoder.pkl`** (l'encoder per le variabili categoriche)
+
+Questi file devono essere presenti nella directory del progetto affinché l'applicazione possa interrogarli correttamente.
+
+Una volta verificata la presenza dei file e installate le dipendenze necessarie, posizionarsi nella cartella del progetto tramite il terminale e lanciare il seguente comando:
 
 ```bash
 streamlit run app.py
