@@ -51,7 +51,14 @@ Il dataset finale utilizzato per l'addestramento è composto dalle seguenti feat
 * **`size`**: La classe dimensionale del veicolo (es. *full-size, mid-size, compact*).
 * **`type`**: La categoria di carrozzeria o segmento di mercato (es. *SUV, truck, pickup, sedan*).
 * **`paint_color`**: Il colore esterno della carrozzeria.
-* **`state`**: Lo stato federale degli USA in cui l'inserzione di vendita è stata pubblicata (es. *tx* per Texas, *ca* per California).
 
 
-# Manuale d'uso 
+## 💻 Manuale d'Uso dell'Applicazione
+
+Il file `app.py` contiene il programma principale e l'architettura logica per l'esecuzione del modello predittivo. L'interfaccia grafica è stata sviluppata sfruttando il framework **Streamlit**.
+
+### 1. Prerequisiti e Avvio
+Per avviare l'applicazione in locale, assicurarsi di aver installato le dipendenze necessarie e lanciare il seguente comando all'interno del terminale, posizionandosi nella cartella del progetto:
+
+```bash
+streamlit run app.py
