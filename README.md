@@ -1,5 +1,15 @@
 ﻿# 🚗 Predizione del Prezzo delle Auto Usate tramite Machine Learning
 
+I Creatori:
+
+Venturini Antonio https://www.linkedin.com/in/antonio-venturini-a34912138/ 
+
+Vespa Diego https://www.linkedin.com/in/diego-vespa-55b970335/
+
+Compagnone Roberto Karol https://www.linkedin.com/in/roberto-karol-compagnone-a05312414/
+
+Scalisi Luigi https://www.linkedin.com/in/luigi-scalisi-8495ba286/
+
 ## 🎯 Sunto del Progetto
 Questo progetto ha l'obiettivo di sviluppare un sistema predittivo in grado di stimare il corretto valore di mercato di un'auto usata. A partire dall'inserimento di caratteristiche specifiche del veicolo (come marca, anno di immatricolazione, chilometraggio, tipo di carburante e tipologia di cambio), il sistema utilizza un algoritmo di Machine Learning per restituire una stima del prezzo affidabile e in tempo reale.
 
@@ -24,9 +34,6 @@ L'intero ciclo di sviluppo è stato suddiviso in tre macro-fasi:
    * Sviluppo di un'interfaccia utente semplice e intuitiva.
    * Tramite la dashboard, l'utente può inserire le caratteristiche della propria auto in appositi form e interrogare direttamente il modello addestrato, ottenendo immediatamente il prezzo di vendita stimato.
 
-
-1. 
-
 ## 📖 Dizionario dei Dati (Data Dictionary)
 
 Il dataset finale utilizzato per l'addestramento è composto dalle seguenti feature (variabili):
@@ -45,3 +52,6 @@ Il dataset finale utilizzato per l'addestramento è composto dalle seguenti feat
 * **`type`**: La categoria di carrozzeria o segmento di mercato (es. *SUV, truck, pickup, sedan*).
 * **`paint_color`**: Il colore esterno della carrozzeria.
 * **`state`**: Lo stato federale degli USA in cui l'inserzione di vendita è stata pubblicata (es. *tx* per Texas, *ca* per California).
+
+
+# Manuale d'uso 
