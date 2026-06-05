@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import json
+from urllib.request import urlopen
+
 
 # ==============================
 # CARICAMENTO MODELLO ED ENCODER
@@ -255,6 +258,41 @@ def predici_prezzo(df):
     return predizione[0]
 
 
+@st.cache_data(ttl=60 * 60 * 6)
+def ottieni_tasso_cambio_usd_eur():
+    """
+    Recupera il cambio USD -> EUR aggiornato usando Frankfurter.
+    Frankfurter non richiede API key e usa tassi di riferimento aggiornati giornalmente.
+
+    Se la connessione non funziona, usa un tasso di fallback così l'app resta utilizzabile.
+    """
+
+    tasso_fallback = 0.92
+
+    try:
+        url = "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR"
+
+        with urlopen(url, timeout=5) as risposta:
+            dati = json.loads(risposta.read().decode("utf-8"))
+
+        tasso = float(dati["rates"]["EUR"])
+        data_cambio = dati.get("date", "data non disponibile")
+
+        return tasso, data_cambio, False
+
+    except Exception:
+        return tasso_fallback, "fallback", True
+
+
+def converti_dollari_in_euro(importo_dollari, tasso_usd_eur):
+    return float(importo_dollari) * float(tasso_usd_eur)
+
+
+def formatta_euro(importo):
+    # Formato italiano: €12.345 invece di €12,345
+    return f"€{importo:,.0f}".replace(",", ".")
+
+
 def crea_riepilogo_italiano(df):
     """
     Crea una tabella leggibile per l'utente finale.
@@ -285,7 +323,6 @@ def crea_riepilogo_italiano(df):
         columns=["Campo", "Valore inserito"]
     )
 
-
 # ==============================
 # INTERFACCIA STREAMLIT
 # ==============================
@@ -296,7 +333,6 @@ st.set_page_config(
     layout="wide"
 )
 
-
 # ==============================
 # STILE CSS
 # ==============================
@@ -304,17 +340,21 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    div.stButton > button:first-child {
+div.stButton > button:first-child {
         width: 100%;
-        height: 95px;
-        font-size: 34px;
+        height: 140px;      
+        font-size: 60px !important;    
         font-weight: 900;
-        border-radius: 20px;
+        border-radius: 25px;
         background-color: #16a34a;
         color: white;
         border: 3px solid #15803d;
         box-shadow: 0px 8px 18px rgba(22, 163, 74, 0.35);
         transition: all 0.2s ease-in-out;
+    }
+
+    div.stButton > button:first-child p {
+        font-size: 60px !important;
     }
 
     div.stButton > button:first-child:hover {
@@ -343,7 +383,7 @@ st.markdown(
 
     .range-title {
         color: #ffffff;
-        font-size: 28px;
+        font-size: 72px;
         font-weight: 800;
         margin-bottom: 10px;
     }
@@ -390,7 +430,7 @@ st.markdown(
 # TITOLO
 # ==============================
 
-st.title("🚗 Valutatore di Auto Usate di Avocado 🥑 TEAM")
+st.title("Valutatore di Auto 🚗 Usate di Avocado 🥑 TEAM")
 
 st.markdown(
     """
@@ -404,12 +444,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 # ==============================
 # SIDEBAR INPUT IN ITALIANO
 # ==============================
 
-st.sidebar.header("🚘 Inserisci i dati della tua auto!")
+st.sidebar.header("Inserisci i dati della tua auto!")
 
 manufacturer = st.sidebar.selectbox(
     "Marca",
@@ -511,25 +550,31 @@ dati_auto = {
 
 df_input = pd.DataFrame([dati_auto], columns=FEATURE_COLUMNS)
 
-
 # ==============================
 # PULSANTE PREDIZIONE IN ALTO
 # ==============================
 
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns([1, 2.5, 1])
 
 # 2. Utilizziamo il blocco 'with' per dire a Streamlit di scrivere nella colonna 2
 with col2:
     # Inseriamo il pulsante interattivo
-    bottone_calcola = st.button("📊 Calcola Valore Stimaton 💰", use_container_width=True)
+    bottone_calcola = st.button("Calcola Valore Stimato", use_container_width=True)
 
 # 3. Gestione del click sul pulsante
 if bottone_calcola:
     try:
-        valore_stimato = predici_prezzo(df_input)
+        # Il modello restituisce una stima in dollari, quindi convertiamo l'output in euro.
+        valore_stimato_usd = predici_prezzo(df_input)
 
-        valore_minimo = max(0, valore_stimato - 1500)
-        valore_massimo = valore_stimato + 1500
+        valore_minimo_usd = max(0, valore_stimato_usd - 1500)
+        valore_massimo_usd = valore_stimato_usd + 1500
+
+        tasso_usd_eur, data_cambio, usa_fallback = ottieni_tasso_cambio_usd_eur()
+
+        valore_stimato_eur = converti_dollari_in_euro(valore_stimato_usd, tasso_usd_eur)
+        valore_minimo_eur = converti_dollari_in_euro(valore_minimo_usd, tasso_usd_eur)
+        valore_massimo_eur = converti_dollari_in_euro(valore_massimo_usd, tasso_usd_eur)
 
         st.success("Predizione completata con successo!")
 
@@ -540,11 +585,11 @@ if bottone_calcola:
                     Valore stimato dell'auto usata
                 </div>
                 <div class="range-value">
-                    ${valore_minimo:,.0f} - ${valore_massimo:,.0f}
+                    {formatta_euro(valore_minimo_eur)} - {formatta_euro(valore_massimo_eur)}
                 </div>
                 <div class="range-subtitle">
-                    Range stimato sulla base dei dati inseriti
-                    Ma Yuri ti consglia ${valore_stimato:,.0f}
+                    Range stimato sulla base dei dati inseriti.<br>
+                    Ma Yuri ti consiglia {formatta_euro(valore_stimato_eur)}.<br>
                 </div>
             </div>
             """,
