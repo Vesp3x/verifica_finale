@@ -98,7 +98,28 @@ Abbiamo realizzato una presentazione in PowerPoint con l’obiettivo di illustra
 
   
 
-  
+  ## GRUPPO 2 | Giorno 3 (05/06/2026)
+
+#### 📊 Ottimizzazione della visualizzazione degli errori
+
+* **Assegnazione:** *Valutazione di gruppo*
+* **Descrizione:** Ogni membro del team ha contribuito all’ottimizzazione della visualizzazione degli errori relativi al proprio modello. Sono stati migliorati i grafici e le analisi comparative per rendere più chiara l’interpretazione delle prestazioni dei diversi algoritmi, evidenziando le differenze tra valori reali e valori predetti.
+
+#### 🔧 Ottimizzazione e riaddestramento del modello migliore
+
+* **Assegnazione:** *Antonio e Roberto*
+* **Descrizione:** Sono state apportate le ultime modifiche al modello risultato più performante, ovvero **LightGBM**. Dopo aver perfezionato alcuni aspetti della configurazione e della gestione dei dati, il modello è stato riaddestrato per ottenere una versione finale più stabile e accurata, pronta per essere utilizzata nell’applicazione di previsione.
+
+#### 🖥️ Miglioramento dell’interfaccia di previsione
+
+* **Assegnazione:** *Antonio e Roberto*
+* **Descrizione:** È stata prodotta e migliorata la visualizzazione del programma dedicato alla previsione del prezzo dell’auto. L’interfaccia consente all’utente di inserire le caratteristiche principali del veicolo e ottenere una stima del costo in modo semplice, chiaro e interattivo.
+
+#### 📄 Aggiornamento della presentazione del progetto
+
+* **Assegnazione:** *Luigi e Diego*
+* **Descrizione:** È stata migliorata e portata avanti la presentazione PowerPoint del progetto. Sono state integrate le ultime modifiche relative ai modelli, alle metriche di valutazione, alla scelta finale di LightGBM e alla visualizzazione dell’interfaccia utente, così da rendere la presentazione più completa e coerente con lo stato finale del lavoro.
+
       
     
 
