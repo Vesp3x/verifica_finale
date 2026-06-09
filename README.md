@@ -1,18 +1,5 @@
 ﻿# Predicting Used Car Prices Using Machine Learning
 
-The creators:
-
-Venturini Antonio [Linkedin Venturini Antonio](https://www.linkedin.com/in/antonio-venturini-a34912138/)
-
-Vespa Diego [Linkedin Vespa Diego](https://www.linkedin.com/in/diego-vespa-55b970335/)
-
-Compagnone Roberto Karol [Linkedin Compagnone Roberto Karol](https://www.linkedin.com/in/roberto-karol-compagnone-a05312414/)
-
-Scalisi Luigi [Linkedin Scalisi Luigi](https://www.linkedin.com/in/luigi-scalisi-8495ba286/)
-
-
-# Predicting Used Car Prices Using Machine Learning
-
 ## Project Creators
 * **Antonio Venturini** - [LinkedIn Profile](https://www.linkedin.com/in/antonio-venturini-a34912138/)
 * **Diego Vespa** - [LinkedIn Profile](https://www.linkedin.com/in/diego-vespa-55b970335/)
